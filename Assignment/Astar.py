@@ -73,3 +73,13 @@ if g_node:
       
 else:
     print("Can not reach out the goal")
+
+
+
+
+'''
+
+Path: ['S', 'A', 'B', 'C', 'G']
+Total Cost: 8
+
+'''
