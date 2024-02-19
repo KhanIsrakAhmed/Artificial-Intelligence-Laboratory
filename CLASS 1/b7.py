@@ -3,6 +3,7 @@
 
 # take an integer and check whether that is a leap year or not
 
+
 def is_leap_year(year):
     # Leap years are divisible by 4
     # Except for years divisible by 100, unless they are also divisible by 400

@@ -6,8 +6,8 @@ x = 5
 # if(condition){
 # }
 
-if x%2==0:
-  print("even")
+if x % 2 == 0:
+    print("even")
 else:
-  print('odd')
+    print('odd')
 print("outside if-else")
