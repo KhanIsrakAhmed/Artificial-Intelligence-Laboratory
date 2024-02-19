@@ -9,13 +9,15 @@ class Node:
         self.g = g
         self.h = h
         self.f = g + h
-        
+
+
 '''
 p = parent................................................................
 g = actual value..........................................................
 h = heuristic value.......................................................
 
 '''
+pqueue = []
 
 adjacency_list = {
     'S': [('A', 1), ('B', 4)],
@@ -36,45 +38,39 @@ H = {
     'G': 0,
 }
 
-pqueue = []
-nobj = Node('S', None, 0, H['S']) 
+nobj = Node('S', None, 0, H['S'])
 pqueue.append(nobj)
 g_node = None
 
 while pqueue:
-    pqueue.sort(key=lambda x: x.f) #Sort the pqueue base on f copied from google
+    # it sort the queue base on f copied from google
+    pqueue.sort(key=lambda x: x.f)
     nobj = pqueue.pop(0)
 
     if nobj.name == 'G':
         g_node = nobj
         break
-    
-    
 
     for nbr_name, edge_cost in adjacency_list[nobj.name]:
-        nbr_node = Node(nbr_name, nobj, nobj.g + edge_cost, H[nbr_name])
+        nbr_node = Node(nbr_name, nobj, nobj.g + edge_cost, H[nobj.name])
         pqueue.append(nbr_node)
-
 
 
 if g_node:
     path = []
     cost = g_node.g
-    
+
     while g_node is not None:
         path.append(g_node.name)
         g_node = g_node.p
-        
-        
+
     path.reverse()
     print("Path:", path)
     print("Total Cost:", cost)
-    
-      
+
+
 else:
     print("Can not reach out the goal")
-
-
 
 
 '''
