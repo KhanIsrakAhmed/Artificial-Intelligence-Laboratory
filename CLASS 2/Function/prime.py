@@ -1,3 +1,7 @@
+'''   ****************  Author :  Khan Israk Ahmed  *************************  '''
+'''     ****************  Date:    17-02-2024     *************************  '''
+
+
 def isprime(x):
     if x <= 1:
         # print("Not prime")
@@ -9,7 +13,6 @@ def isprime(x):
     # print("Is prime")
     return True
 
+
 y = int(input("Enter a number: "))
 isprime(y)
-
- 

@@ -6,6 +6,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 x = np.array([0.5,1,1.5,2,2.5,3.5,3.75,4.25])
 y = x**3
+# print(np.unique(x))
 
 plt.scatter(x, y, color="red", s=120, marker='*')
 plt.plot(x, y)
