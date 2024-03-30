@@ -18,11 +18,12 @@ def calculate_cost(state):
 
 def generate_neighbors(current_state):
     neighbors = []
-    for i in range(len(current_state)):
+    for i in range(len(current_state)-1):
+        new_state = current_state[:]
         for j in range(i+1, len(current_state)):
-            new_state = current_state[:]
-            new_state[i], new_state[j] = new_state[j], new_state[i]
-            neighbors.append(new_state)
+            
+            new_state[j], new_state[j-1] = new_state[j-1], new_state[j]
+            neighbors.append(new_state[:])
     return neighbors
 
 
